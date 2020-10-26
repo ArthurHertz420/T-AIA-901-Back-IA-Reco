@@ -6,21 +6,20 @@ import nltk
 from nltk.stem.snowball import FrenchStemmer
 import string
 
-nltk.download()
 
 # Lire les données depuis le fichier CSV
-rawData = pd.read_csv("bad_words.csv", sep=';')
+rawData = pd.read_csv("bad_wordFinal.csv", sep=';')
 
 def remove_punct(text):
-    text_nopunct = "".join([char for char in text if char not in string.punctuation])  # retire toute les ponctuations
+    text_nopunct = "".join([char for char in str(text) if char not in string.punctuation])  # retire toute les ponctuations
     return text_nopunct
 
 
-rawData['body_text_clean'] = rawData['trajet'].apply(lambda x: remove_punct(x))
+rawData['body_text_clean'] = rawData['Data'].apply(lambda x: remove_punct(x))
 
 
 def tokenize(text):
-    tokens = re.split('\W+', text)  # W+ veux dire sois un caratère A-Za-z0-9 ou un tiret
+    tokens = re.split('\W+', str(text))  # W+ veux dire sois un caratère A-Za-z0-9 ou un tiret
     return tokens
 
 
@@ -38,8 +37,8 @@ def remove_stopwords(tokenized_list):
 rawData['body_text_nostop'] = rawData['body_text_tokenized'].apply(lambda x: remove_stopwords(x))
 
 # rawData['body_text_stemmed'] = rawData['body_text_nostop'].apply(lambda x: stemming(x))
-print(rawData['body_text'])
+print(rawData['body_text_nostop'])
 
-a = rawData['body_text']
+a = rawData['body_text_nostop']
 
 a.to_csv('resultat2.csv')
