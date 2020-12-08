@@ -41,4 +41,4 @@ print(rawData['body_text_nostop'])
 
 a = rawData['body_text_nostop']
 
-a.to_csv('resultat2.csv')
+a.to_csv('badwords.csv')
