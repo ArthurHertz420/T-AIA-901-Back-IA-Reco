@@ -5,4 +5,8 @@ Versions :
     tensorflow-estimator~=2.3.0
     anaconda3
     Python 3.6
+    request
+    Flask
+
+
 
