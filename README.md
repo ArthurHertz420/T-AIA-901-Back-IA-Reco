@@ -1,5 +1,4 @@
 # T-AIA-901-Back-IA-Reco
-
 Versions :
     spacy~=2.3.2
     tenserflow~=2.3.1
