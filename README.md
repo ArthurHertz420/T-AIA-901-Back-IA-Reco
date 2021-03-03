@@ -7,6 +7,11 @@ Versions :
     tensorflow-estimator~=2.3.0
     anaconda3
     Python 3.6
+    Panda
+    request
+    Flask
+    heapq
+    copy
     
 Install spaCy :
 
