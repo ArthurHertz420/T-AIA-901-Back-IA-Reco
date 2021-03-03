@@ -12,6 +12,7 @@ Versions :
     Flask
     heapq
     copy
+    random
     
 Install spaCy :
 
